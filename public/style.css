@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
+
+:root {
+  font-family: Roboto;
+  font-size: 16px;
+
+  --green: rgb(52, 180, 52);
+  --red: rgb(201, 45, 45);
+  --blue: blue;
+}
+
+h1, h4 {
+  text-align: center;
+  color: var(--blue);
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.centered {
+  margin: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#container-form{
+  top: 30%;
+  height: 15%;
+  width: 90%;
+}
+
+#container-qrcode {
+  top: 65%;
+  height: 40%;
+  aspect-ratio: 1/1;
+  border: 2px dotted black;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+#input-url {
+  width: 12%;
+  text-align: center;
+  border-style: none;
+  outline-style: none;
+  font-size: 1rem;
+  box-sizing: content-box;
+  border-radius: 100px;
+  max-width: 90%;
+  transition: background-color .3s;
+}
+
+#input-url:not(:valid) {
+  background-color: var(--red);
+}
+
+#input-url:valid {
+  background-color: var(--green);
+}
+
+#form > button {
+  font-size: 0.9rem;
+  height: 30%;
+}
+
+#container-credits {
+  right: 0;
+  bottom: 0;
+  padding: 0 2% 2% 0;
+  flex-direction: column;
+}
+
+#container-credits > p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5%;
+  color: blue;
+  font-weight: bolder;
+}
+
+.link {
+  color: var(--blue);
+  margin: 0;
+  margin-top: 3%;
+}

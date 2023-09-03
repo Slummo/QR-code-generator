@@ -1,0 +1,14 @@
+{
+  "name": "qr-code-generator",
+  "version": "1.0.0",
+  "description": "A simple qr code generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Marchisio Luca",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
