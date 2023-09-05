@@ -7,7 +7,7 @@ const port = 8888;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/generate-qr-code", async (req, res) => {
+app.get("/qr", async (req, res) => {
   try {
     const url = req.query.url;
 

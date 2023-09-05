@@ -11,14 +11,29 @@ function generateQRCode() {
   const qrcodeContainer = document.getElementById("container-qrcode");
   qrcodeContainer.innerHTML = "";
 
-  new QRCode(qrcodeContainer, {
-    text: inputUrl.value,
-    width: 128,
-    height: 128,
-    correctLevel: QRCode.CorrectLevel.H,
-  });
+  const url = "http://localhost:8888/qr?url=" + inputUrl.value;
+  console.log(url);
 
-  document.getElementById("qrcode-container").style.display = "block";
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  fetch(url, requestOptions)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then((data) => {
+      qrcodeContainer.innerHTML = data;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 function getTextWidth(text) {
@@ -59,4 +74,8 @@ inputUrl.addEventListener("input", (e) => {
 btnGenerate.addEventListener("click", (e) => {
   e.preventDefault();
   generateQRCode();
+});
+
+window.addEventListener("beforeunload", (e) => {
+  e.preventDefault();
 });
