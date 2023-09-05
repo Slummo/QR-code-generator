@@ -11,7 +11,7 @@ function generateQRCode() {
   const qrcodeContainer = document.getElementById("container-qrcode");
   qrcodeContainer.innerHTML = "";
 
-  const url = "http://localhost:8888/qr?url=" + inputUrl.value;
+  const url = "/qr?url=" + inputUrl.value;
   console.log(url);
 
   const requestOptions = {
