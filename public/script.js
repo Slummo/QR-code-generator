@@ -1,6 +1,6 @@
 const inputUrl = document.getElementById("input-url");
 const inputMaxWidth = parseFloat(window.getComputedStyle(inputUrl).maxWidth);
-const btnGenerate = document.getElementById("btn-generate");
+const form = document.getElementById("form");
 
 function generateQRCode() {
   if (!inputUrl.checkValidity()) {
@@ -71,7 +71,7 @@ inputUrl.addEventListener("input", (e) => {
   }
 });
 
-btnGenerate.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   generateQRCode();
 });
